@@ -1,14 +1,91 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <link href="./src/output.css" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon Curriculum Vitæe</title>
 </head>
+
 <body>
+
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <ul tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+        <!-- Bouton Accueil -->
+        <li><a>Accueil</a></li>
+
+        <!-- dropdown experiences -->
+        <li><a>Expériences Professionnelles</a>
+          <ul class="p-2">
+            <li><a>Inspecteur des travaux</a></li>
+            <li><a>Apiculteur</a></li>
+          </ul>
+        </li>
+
+        <!-- Bouton Formations -->
+        <li><a>Formations</a></li>
+      </ul>
+    </div>
+  <!-- Dropdown themes -->
+  <div class="dropdown dropdown-hover">
+    <div tabindex="0" role="button" class="btn m-1">Thèmes</div>
+      <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl">
+
+        <!-- Bouton Default Retro-->
+        <li class="flex gap-2 cursor-pointer items-center">
+          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="default"/>
+          Default
+        </li>
+
+        <!-- Bouton Sunset -->
+        <li class="flex gap-2 cursor-pointer items-center">
+          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="sunset"/>
+          Sunset
+        </li>
+        <!-- Bouton Nord -->
+        <li class="flex gap-2 cursor-pointer items-center">
+          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="nord"/>
+          Nord
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+
+      <!-- Bouton Accueil -->
+      <li><a>Accueil</a></li>
+
+      <!-- dropdown experiences -->
+      <li>
+         <details>
+            <summary>Expériences Professionnelles</summary>
+            <ul class="p-2">
+              <li><a>Inspecteur des travaux</a></li>
+              <li><a>Apiculteur</a></li>
+            </ul>
+          </details>
+        </li>
+        
+        <!-- Bouton Formations -->
+        <li><a>Formations</a></li>
+      </ul>
+    </div>
+
+    <!-- Bouton contactez-moi -->
+    <div class="navbar-end">
+      <a class="btn">Contactez-moi</a>
+    </div>
+  </div>
+
+
   <h1>Daniel DANIEL</h1>
-  <h2>Inspecteur des Travaux Finis & Apiculteur</h2>
+  <h2>Inspecteur des Travaux & Apiculteur</h2>
   <p>Âge : 34 ans</p>
   <p>[img] +33 6 06 06 06 06 · [img] daniel.daniel@daniel-mail.com</p>
   <p>[img] 123 Rue des Abeilles, 75016 Paris</p>
