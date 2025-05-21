@@ -836,6 +836,9 @@
     align-items: center;
     flex-shrink: 0;
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }

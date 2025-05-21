@@ -1,146 +1,324 @@
 <!doctype html>
 <html lang="fr" data-theme="retro">
-<head>
-  <meta charset="utf-8"/>
-  <link href="./src/output.css" rel="stylesheet" type="text/css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mon Curriculum Vitæe</title>
-</head>
+  <head>
+    <meta charset="utf-8"/>
+    <link href="./src/output.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Curriculum Vitæe</title>
+  </head>
 
-<body>
-  <!-- Image et titre animes-->
-  <div id="imageContainer" class="relative h-[300vh]">
-        <div id="stickyImage" class="sticky top-0 w-full h-screen bg-cover bg-center" style="background-image: url('./img/alveole.png');">
+  <body>
+    <!-- Image et titre animes-->
+    <div id="imageContainer" class="relative h-[300vh]">
+      <div id="stickyImage" class="sticky top-0 w-full h-screen bg-cover bg-center" style="background-image: url('./img/alveole.png');">
+      </div>
+    </div>
+
+    <div class="fixed w-full h-screen flex items-center justify-center top-0">
+      <div id="scrollText" class="text-white font-bold transition-all duration-300">
+        <h1  class="p-4 text-7xl">Daniel DANIEL</h1>
+        <h2 class="text-4xl">Inspecteur des Travaux & Apiculteur</h2>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 w-full">
+      <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <ul tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+              <!-- Bouton Accueil -->
+              <li><a onclick="affiche('accueil')">Accueil</a></li>
+
+              <!-- dropdown experiences -->
+              <li><a>Expériences Professionnelles</a>
+                <ul class="p-2">
+                  <li><a onclick="affiche('inspecteur')">Inspecteur des travaux</a></li>
+                  <li><a onclick="affiche('apiculteur')">Apiculteur</a></li>
+                </ul>
+              </li>
+
+              <!-- Bouton Formations -->
+              <li><a onclick="affiche('formation')">Formations</a></li>
+
+              <!-- Bouton Competences -->
+              <li><a onclick="affiche('competences')">Compétences</a></li>
+
+              <!-- Bouton Centres interet -->
+              <li><a onclick="affiche('interet')">Centres d'intérêt</a></li>
+            </ul>
+          </div>
+          <!-- Dropdown themes -->
+          <div class="dropdown dropdown-hover">
+            <div tabindex="0" role="button" class="btn m-1">
+              Thèmes
+            </div>
+            <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl ">
+
+              <!-- Bouton Default Retro-->
+              <li class="flex gap-2 cursor-pointer items-center">
+                <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-retro" value="retro" onchange="changeTheme(this.value)"/>
+                Default
+              </li>
+
+              <!-- Bouton Sunset -->
+              <li class="flex gap-2 cursor-pointer items-center">
+                <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-sunset" value="sunset" onchange="changeTheme(this.value)"/>
+                Sunset
+              </li>
+                <!-- Bouton Nord -->
+              <li class="flex gap-2 cursor-pointer items-center">
+                <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-nord" value="nord" onchange="changeTheme(this.value)"/>
+                Nord
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-
-  <div class="fixed w-full h-screen flex items-center justify-center top-0">
-    <div id="scrollText" class="text-white font-bold transition-all duration-300">
-      <h1  class="p-4 text-7xl">Daniel DANIEL</h1>
-      <h2 class="text-4xl">Inspecteur des Travaux & Apiculteur</h2>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-  <header class="sticky top-0 z-50 w-full">
-    <div class="navbar bg-base-100 shadow-sm">
-      <div class="navbar-start">
-        <div class="dropdown">
-          <ul tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
 
             <!-- Bouton Accueil -->
-            <li><a>Accueil</a></li>
+            <li><a class="btn-navbar" onclick="affiche('accueil')">Accueil</a></li>
 
             <!-- dropdown experiences -->
-            <li><a>Expériences Professionnelles</a>
-              <ul class="p-2">
-                <li href="./pages/Inspecteur.html"><a>Inspecteur des travaux</a></li>
-                <li><a href="./pages/Apiculteur.html">Apiculteur</a></li>
-              </ul>
+            <li>
+              <details>
+                <summary>Expériences Professionnelles</summary>
+                <ul class="p-2">
+                  <li><a onclick="affiche('inspecteur')">Inspecteur des travaux</a></li>
+                  <li><a onclick="affiche('apiculteur')">Apiculteur</a></li>
+                </ul>
+              </details>
             </li>
-
+            
             <!-- Bouton Formations -->
-            <li><a href="./pages/Formations.html">Formations</a></li>
+            <li><a onclick="affiche('formation')">Formations</a></li>
 
             <!-- Bouton Competences -->
-            <li><a href="./pages/competences.html">Compétences</a></li>
+            <li><a onclick="affiche('competences')">Compétences</a></li>
 
             <!-- Bouton Centres interet -->
-            <li><a href="./pages/interet.html">Centres d'intérêt</a></li>
+            <li><a onclick="affiche('interet')">Centres d'intérêt</a></li>
           </ul>
         </div>
-        <!-- Dropdown themes -->
-        <div class="dropdown dropdown-hover">
-          <div tabindex="0" role="button" class="btn m-1">
-            Thèmes
-          </div>
-          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl ">
 
-            <!-- Bouton Default Retro-->
-            <li class="flex gap-2 cursor-pointer items-center">
-              <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-retro" value="retro" onchange="changeTheme(this.value)"/>
-              Default
-            </li>
-
-            <!-- Bouton Sunset -->
-            <li class="flex gap-2 cursor-pointer items-center">
-              <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-sunset" value="sunset" onchange="changeTheme(this.value)"/>
-              Sunset
-            </li>
-              <!-- Bouton Nord -->
-            <li class="flex gap-2 cursor-pointer items-center">
-              <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-nord" value="nord" onchange="changeTheme(this.value)"/>
-              Nord
-            </li>
-          </ul>
+        <!-- Bouton contactez-moi -->
+        <div class="navbar-end">
+          <a class="btn">Contactez-moi</a>
         </div>
+      </div> 
+    </header>
+
+    <main class="h-[1600px]">
+      <div id="accueil" class="view" >
+        <p>Âge : 34 ans</p>
+        <p>[img] +33 6 06 06 06 06 · [img] daniel.daniel@damail.com</p>
+        <p>[img] 123 Rue des Abeilles, 75016 Paris</p>
+        <p>[img] <a href="#">linkedin.com/in/danieldaniel</a></p>
+
+        <span> Inspecteur en génie civil avec 10 ans d'expérience, spécilisé dans le contrôle qualité des projets de construction. 
+          Apiculteur de 3ème génération gérant une exploitation familiale de 20 ruches. 
+          Passionné par la durabilité et cherchant à combiner ces deux domaines d'expertise pour développer des pratiques de construction écologiquement responsables.
+        </span>
+
+
+        <h3>Projets et Réalisations</h3>
+        <ul>
+          <li>Programme d'inspection intégrant la biodiversité</li>
+          <li>Ruches sur toits d'immeubles (projet pilote)</li>
+          <li>Guide sur l'intégration d'espaces pollinisateurs en urbain</li>
+        </ul>
+
+
+        <h3>Objectif Professionnel</h3>
+        <p>
+          Cherche à développer une expertise unique combinant génie civil et apiculture, 
+          pour promouvoir des projets de construction intégrant des solutions favorables à 
+          la biodiversité et aux pollinisateurs.
+        </p>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal px-1">
 
-          <!-- Bouton Accueil -->
-          <li><a>Accueil</a></li>
+      <div id="inspecteur" class="view">
+        <h1>Inspecteur Des Travaux</h1>
+        <p>2020</p>
+        <h4>BTP Qualité France | Inspecteur Senior des Travaux</h4>
+        <ul>
+          <li>Supervision et contrôle qualité de projets de construction urbaine</li>
+          <li>Coordination avec les équipes d'ingénieurs et entrepreneurs</li>
+          <li>Rédaction de rapports d'inspection/conformité</li>
+          <li>Conseil sur les normes environnementales</li>
+        </ul>
 
-          <!-- dropdown experiences -->
-          <li>
-            <details>
-              <summary>Expériences Professionnelles</summary>
-              <ul class="p-2">
-                <li><a href="./pages/Inspecteur.html">Inspecteur des travaux</a></li>
-                <li><a href="./pages/Apiculteur.html">Apiculteur</a></li>
-              </ul>
-            </details>
-          </li>
-          
-          <!-- Bouton Formations -->
-          <li><a href="./pages/Formations.html">Formations</a></li>
+        <p>2014</p>
+        <h4>Bureau Veritas | Technicien d'Inspection</h4>
+        <ul>
+          <li>Contrôle technique de bâtiments</li>
+          <li>Vérification de conformité</li>
+          <li>Formations de techniciens</li>
+        </ul>
 
-          <!-- Bouton Competences -->
-          <li><a href="./pages/competences.html">Compétences</a></li>
-
-          <!-- Bouton Centres interet -->
-          <li><a href="./pages/interet.html">Centres d'intérêt</a></li>
+        <p>2014</p>
+        <h4>Bouygues Construction | Assistant Ingénieur (Stage)</h4>
+        <ul>
+          <li>Conception, planification</li>
+          <li>Assistance supervision chantier</li>
+          <li>Rapports de conformité</li>
         </ul>
       </div>
 
-      <!-- Bouton contactez-moi -->
-      <div class="navbar-end">
-        <a class="btn">Contactez-moi</a>
+      <div id="apiculteur" class="view">
+        <h1>Activité Apicole</h1>
+
+        <h4>DaMiel | Producteur-Propriétaire</Da-></h4>
+        <ul>
+          <li>Gestion de 20 ruches</li>
+          <li>Récolte et conditionnement de miel artisanal</li>
+          <li>Vente à domicile et magasin bio "Nature & Vie"</li>
+          <li>Ateliers de sensibilisation à la protection des abeilles</li>
+        </ul>
       </div>
-    </div> 
-  </header>
 
-  <main class="h-[1600px]">
-    <div id="accueil">
-      <p>Âge : 34 ans</p>
-      <p>[img] +33 6 06 06 06 06 · [img] daniel.daniel@damail.com</p>
-      <p>[img] 123 Rue des Abeilles, 75016 Paris</p>
-      <p>[img] <a href="#">linkedin.com/in/danieldaniel</a></p>
+      <div id="formation" class="view">
+        <h1  class="flex justify-center p-4 text-7xl">Formations</h1>
+        <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+          <li>
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
 
-      <span> Inspecteur en génie civil avec 10 ans d'expérience, spécilisé dans le contrôle qualité des projets de construction. 
-        Apiculteur de 3ème génération gérant une exploitation familiale de 20 ruches. 
-        Passionné par la durabilité et cherchant à combiner ces deux domaines d'expertise pour développer des pratiques de construction écologiquement responsables.
-      </span>
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="timeline-start mb-10 md:text-end">
+              <time class="font-mono italic">2008</time>
+              <div class="text-lg font-black">Lycée Henri IV, Paris, Bac S</div>
+              <ul>
+                <li>Mention Très Bien</li>
+                <li>Spécialité Mathématiques</li>
+              </ul>
+            </div>
+            <hr />
+          </li>
 
+          <li>
+            <hr />
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="timeline-end md:mb-10">
+              <time class="font-mono italic">2008-2011</time>
+              <div class="text-lg font-black">Université Paris-Dauphine, Licence Économie</div>
+              <ul>
+                <li>Économie de l'environnement</li>
+                <li>Mémoire : Impact économique des normes environnementales</li>
+              </ul>
+            </div>
+            <hr />
+          </li>
 
-    <h3>Projets et Réalisations</h3>
-    <ul>
-      <li>Programme d'inspection intégrant la biodiversité</li>
-      <li>Ruches sur toits d'immeubles (projet pilote)</li>
-      <li>Guide sur l'intégration d'espaces pollinisateurs en urbain</li>
-    </ul>
+          <li>
+            <hr />
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="timeline-start mb-10 md:text-end">
+              <time class="font-mono italic">2011-2014</time>
+              <div class="text-lg font-black">ESTP, Licence Pro Génie Civil </div>
+              <ul>
+                <li>Techniques de construction et matériaux</li>
+                <li>Projet : Inspection dans le BTP</li>
+              </ul>
+            </div>
+            <hr />
+          </li>
 
+          <li>
+            <hr />
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="timeline-end md:mb-10">
+              <time class="font-mono italic">2014-2016</time>
+              <div class="text-lg font-black">ENPC, Master Spécialisé en Génie Civil </div>
+              <ul>
+                <li>Spécialisation contrôle qualité et inspection</li>
+                <li>Mémoire : "Considérations environnementales dans les inspections"</li>
+                <li>Stage de fin d'études Vinci Construction (6 mois)</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-    <h3>Objectif Professionnel</h3>
-    <p>
-      Cherche à développer une expertise unique combinant génie civil et apiculture, 
-      pour promouvoir des projets de construction intégrant des solutions favorables à 
-      la biodiversité et aux pollinisateurs.
-    </p>
-  </div>
-  </main>
-<script src="src/scroll.js"></script>
-<script src="src/theme.js"></script>
-</body>
+      <div id="competences" class="view">
+        <h3>Compétences</h3>
+        <h4>Techniques</h4>
+        <ul>
+            <li>Inspection & contrôle qualité</li>
+            <li>Gestion de projet</li>
+            <li>Analyse de plans techniques</li>
+            <li>Normes du bâtiment</li>
+            <li>Techniques apicoles</li>
+            <li>Évaluation d'impact environnemental</li>
+        </ul>
+
+        <h4>Logiciels & Langues</h4>
+        <ul>
+            <li>AutoCAD, Revit, MS Project</li>
+            <li>Trimble SketchUp, Tekla Structures</li>
+            <li>Suite Microsoft Office</li>
+            <li>Français (natif), Anglais (courant)</li>
+        </ul>
+      </div>
+
+      <div id="interet" class="view">
+        <h3>Centres d'intérêt</h3>
+        <ul>
+          <li>Écologie et biodiversité</li>
+          <li>Agriculture urbaine</li>
+          <li>Randonnée</li>
+          <li>Photographie de nature</li>
+        </ul>
+      </div>
+
+    </main>
+    <script src="src/scroll.js"></script>
+    <script src="src/theme.js"></script>
+    <script src="affichage.js"></script>
+  </body>
 </html>

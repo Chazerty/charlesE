@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedTheme) {
     document.documentElement.setAttribute('data-theme', savedTheme);
     if (savedTheme === 'retro'){
-      console.log('retro');
       document.getElementById('theme-retro').checked = true;
     }
     else if (savedTheme === 'sunset'){
