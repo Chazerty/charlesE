@@ -44,18 +44,18 @@
 
         <!-- Bouton Default Retro-->
         <li class="flex gap-2 cursor-pointer items-center">
-          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="default"/>
+          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-retro" value="retro" onchange="changeTheme(this.value)"/>
           Default
         </li>
 
         <!-- Bouton Sunset -->
         <li class="flex gap-2 cursor-pointer items-center">
-          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="sunset"/>
+          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-sunset" value="sunset" onchange="changeTheme(this.value)"/>
           Sunset
         </li>
         <!-- Bouton Nord -->
         <li class="flex gap-2 cursor-pointer items-center">
-          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="nord"/>
+          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller"  id="theme-nord" value="nord" onchange="changeTheme(this.value)"/>
           Nord
         </li>
       </ul>
@@ -104,5 +104,6 @@
   <li>Photographie de nature</li>
 </ul>
 
+<script src="../src/theme.js"></script>
 </body>
 </html>
