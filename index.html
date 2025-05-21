@@ -8,120 +8,135 @@
 </head>
 
 <body>
+  <!-- Image et titre animes-->
+  <div id="imageContainer" class="relative h-[300vh]">
+        <div id="stickyImage" class="sticky top-0 w-full h-screen bg-cover bg-center" style="background-image: url('./img/alveole.png');">
+        </div>
+    </div>
+
+  <div class="fixed w-full h-screen flex items-center justify-center top-0">
+    <div id="scrollText" class="text-white font-bold transition-all duration-300">
+      <h1  class="p-4 text-7xl">Daniel DANIEL</h1>
+      <h2 class="text-4xl">Inspecteur des Travaux & Apiculteur</h2>
+    </div>
+  </div>
+
   <!-- Navbar -->
   <header class="sticky top-0 z-50 w-full">
-  <div class="navbar bg-base-100 shadow-sm">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <ul tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+    <div class="navbar bg-base-100 shadow-sm">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <ul tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
 
-        <!-- Bouton Accueil -->
-        <li><a>Accueil</a></li>
+            <!-- Bouton Accueil -->
+            <li><a>Accueil</a></li>
 
-        <!-- dropdown experiences -->
-        <li><a>Expériences Professionnelles</a>
-          <ul class="p-2">
-            <li href="./pages/Inspecteur.html"><a>Inspecteur des travaux</a></li>
-            <li><a href="./pages/Apiculteur.html">Apiculteur</a></li>
+            <!-- dropdown experiences -->
+            <li><a>Expériences Professionnelles</a>
+              <ul class="p-2">
+                <li href="./pages/Inspecteur.html"><a>Inspecteur des travaux</a></li>
+                <li><a href="./pages/Apiculteur.html">Apiculteur</a></li>
+              </ul>
+            </li>
+
+            <!-- Bouton Formations -->
+            <li><a href="./pages/Formations.html">Formations</a></li>
+
+            <!-- Bouton Competences -->
+            <li><a href="./pages/competences.html">Compétences</a></li>
+
+            <!-- Bouton Centres interet -->
+            <li><a href="./pages/interet.html">Centres d'intérêt</a></li>
           </ul>
-        </li>
+        </div>
+        <!-- Dropdown themes -->
+        <div class="dropdown dropdown-hover">
+          <div tabindex="0" role="button" class="btn m-1">
+            Thèmes
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl">
 
-        <!-- Bouton Formations -->
-        <li><a href="./pages/Formations.html">Formations</a></li>
+            <!-- Bouton Default Retro-->
+            <li class="flex gap-2 cursor-pointer items-center">
+              <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="Default"/>
+              Default
+            </li>
 
-        <!-- Bouton Competences -->
-        <li><a href="./pages/competences.html">Compétences</a></li>
+            <!-- Bouton Sunset -->
+            <li class="flex gap-2 cursor-pointer items-center">
+              <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="sunset"/>
+              Sunset
+            </li>
+              <!-- Bouton Nord -->
+            <li class="flex gap-2 cursor-pointer items-center">
+              <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="nord"/>
+              Nord
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
 
-         <!-- Bouton Centres interet -->
-        <li><a href="./pages/interet.html">Centres d'intérêt</a></li>
-      </ul>
-    </div>
-  <!-- Dropdown themes -->
-  <div class="dropdown dropdown-hover">
-    <div tabindex="0" role="button" class="btn m-1">Thèmes</div>
-      <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl">
+          <!-- Bouton Accueil -->
+          <li><a>Accueil</a></li>
 
-        <!-- Bouton Default Retro-->
-        <li class="flex gap-2 cursor-pointer items-center">
-          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="default"/>
-          Default
-        </li>
+          <!-- dropdown experiences -->
+          <li>
+            <details>
+              <summary>Expériences Professionnelles</summary>
+              <ul class="p-2">
+                <li><a href="./pages/Inspecteur.html">Inspecteur des travaux</a></li>
+                <li><a href="./pages/Apiculteur.html">Apiculteur</a></li>
+              </ul>
+            </details>
+          </li>
+          
+          <!-- Bouton Formations -->
+          <li><a href="./pages/Formations.html">Formations</a></li>
 
-        <!-- Bouton Sunset -->
-        <li class="flex gap-2 cursor-pointer items-center">
-          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="sunset"/>
-          Sunset
-        </li>
-        <!-- Bouton Nord -->
-        <li class="flex gap-2 cursor-pointer items-center">
-          <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" value="nord"/>
-          Nord
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
+          <!-- Bouton Competences -->
+          <li><a href="./pages/competences.html">Compétences</a></li>
 
-      <!-- Bouton Accueil -->
-      <li><a>Accueil</a></li>
+          <!-- Bouton Centres interet -->
+          <li><a href="./pages/interet.html">Centres d'intérêt</a></li>
+        </ul>
+      </div>
 
-      <!-- dropdown experiences -->
-      <li>
-         <details>
-            <summary>Expériences Professionnelles</summary>
-            <ul class="p-2">
-              <li><a href="./pages/Inspecteur.html">Inspecteur des travaux</a></li>
-              <li><a href="./pages/Apiculteur.html">Apiculteur</a></li>
-            </ul>
-          </details>
-        </li>
-        
-        <!-- Bouton Formations -->
-        <li><a href="./pages/Formations.html">Formations</a></li>
-
-        <!-- Bouton Competences -->
-        <li><a href="./pages/competences.html">Compétences</a></li>
-
-        <!-- Bouton Centres interet -->
-        <li><a href="./pages/interet.html">Centres d'intérêt</a></li>
-      </ul>
-    </div>
-
-    <!-- Bouton contactez-moi -->
-    <div class="navbar-end">
-      <a class="btn">Contactez-moi</a>
-    </div>
-  </div>
+      <!-- Bouton contactez-moi -->
+      <div class="navbar-end">
+        <a class="btn">Contactez-moi</a>
+      </div>
+    </div> 
   </header>
-  
-    <h1  class="flex justify-center p-4 text-7xl">Daniel DANIEL</h1>
-    <h2 class="flex justify-center text-4xl">Inspecteur des Travaux & Apiculteur</h2>
-  <p>Âge : 34 ans</p>
-  <p>[img] +33 6 06 06 06 06 · [img] daniel.daniel@damail.com</p>
-  <p>[img] 123 Rue des Abeilles, 75016 Paris</p>
-  <p>[img] <a href="#">linkedin.com/in/danieldaniel</a></p>
+  <main class="h-[1600px]">
+    <p>Âge : 34 ans</p>
+    <p>[img] +33 6 06 06 06 06 · [img] daniel.daniel@damail.com</p>
+    <p>[img] 123 Rue des Abeilles, 75016 Paris</p>
+    <p>[img] <a href="#">linkedin.com/in/danieldaniel</a></p>
 
-  <span> Inspecteur en génie civil avec 10 ans d'expérience, spécilisé dans le contrôle qualité des projets de construction. 
-    Apiculteur de 3ème génération gérant une exploitation familiale de 20 ruches. 
-    Passionné par la durabilité et cherchant à combiner ces deux domaines d'expertise pour développer des pratiques de construction écologiquement responsables.
-  </span>
+    <span> Inspecteur en génie civil avec 10 ans d'expérience, spécilisé dans le contrôle qualité des projets de construction. 
+      Apiculteur de 3ème génération gérant une exploitation familiale de 20 ruches. 
+      Passionné par la durabilité et cherchant à combiner ces deux domaines d'expertise pour développer des pratiques de construction écologiquement responsables.
+    </span>
 
 
-<h3>Projets et Réalisations</h3>
-<ul>
-  <li>Programme d'inspection intégrant la biodiversité</li>
-  <li>Ruches sur toits d'immeubles (projet pilote)</li>
-  <li>Guide sur l'intégration d'espaces pollinisateurs en urbain</li>
-</ul>
+  <h3>Projets et Réalisations</h3>
+  <ul>
+    <li>Programme d'inspection intégrant la biodiversité</li>
+    <li>Ruches sur toits d'immeubles (projet pilote)</li>
+    <li>Guide sur l'intégration d'espaces pollinisateurs en urbain</li>
+  </ul>
 
 
-<h3>Objectif Professionnel</h3>
-<p>
-  Cherche à développer une expertise unique combinant génie civil et apiculture, 
-  pour promouvoir des projets de construction intégrant des solutions favorables à 
-  la biodiversité et aux pollinisateurs.
-</p>
+  <h3>Objectif Professionnel</h3>
+  <p>
+    Cherche à développer une expertise unique combinant génie civil et apiculture, 
+    pour promouvoir des projets de construction intégrant des solutions favorables à 
+    la biodiversité et aux pollinisateurs.
+  </p>
+  </main>
+<script src="src/scroll.js"></script>
 </body>
 </html>
