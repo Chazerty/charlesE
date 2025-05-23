@@ -16,8 +16,3 @@ window.onscroll = () => {
     text.style.opacity = 1; // Reste visible
   }
 };
-
-window.onload = () => {
-  document.body.style.minHeight = '3000px';
-  window.onscroll();
-};

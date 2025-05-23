@@ -17,7 +17,7 @@
     <div class="fixed w-full h-screen flex items-center justify-center top-0">
       <div id="scrollText" class="text-white font-bold transition-all duration-300">
         <h1  class="p-4 text-7xl">Daniel DANIEL</h1>
-        <h2 class="text-4xl">Inspecteur des Travaux & Apiculteur</h2>
+        <h2 class="text-4xl">Inspecteur des Travaux Finis & Apiculteur</h2>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
               <!-- dropdown experiences -->
               <li><a>Expériences Professionnelles</a>
                 <ul class="p-2">
-                  <li><a onclick="affiche('inspecteur')">Inspecteur des travaux</a></li>
+                  <li><a onclick="affiche('inspecteur')">Inspecteur des travaux Finis</a></li>
                   <li><a onclick="affiche('apiculteur')">Apiculteur</a></li>
                 </ul>
               </li>
@@ -87,7 +87,7 @@
               <details>
                 <summary>Expériences Professionnelles</summary>
                 <ul class="p-2">
-                  <li><a onclick="affiche('inspecteur')">Inspecteur des travaux</a></li>
+                  <li><a onclick="affiche('inspecteur')">Inspecteur Des Travaux Finis</a></li>
                   <li><a onclick="affiche('apiculteur')">Apiculteur</a></li>
                 </ul>
               </details>
@@ -106,12 +106,11 @@
 
         <!-- Bouton contactez-moi -->
         <div class="navbar-end">
-          <a class="btn">Contactez-moi</a>
+          <a class="btn" onclick="">Contactez-moi</a>
         </div>
       </div> 
     </header>
-
-    <main class="h-[1600px]">
+    <main class="min-h-155">
       <div id="accueil" class="view" >
         <p>Âge : 34 ans</p>
         <p>[img] +33 6 06 06 06 06 · [img] daniel.daniel@damail.com</p>
@@ -141,9 +140,9 @@
       </div>
 
       <div id="inspecteur" class="view">
-        <h1>Inspecteur Des Travaux</h1>
+        <h1>Inspecteur Des Travaux Finis</h1>
         <p>2020</p>
-        <h4>BTP Qualité France | Inspecteur Senior des Travaux</h4>
+        <h4>BTP Qualité France | Inspecteur Senior des Travaux Totalement Finis</h4>
         <ul>
           <li>Supervision et contrôle qualité de projets de construction urbaine</li>
           <li>Coordination avec les équipes d'ingénieurs et entrepreneurs</li>
@@ -151,8 +150,8 @@
           <li>Conseil sur les normes environnementales</li>
         </ul>
 
-        <p>2014</p>
-        <h4>Bureau Veritas | Technicien d'Inspection</h4>
+        <p>2016</p>
+        <h4>Bureau Veritas | Technicien d'Inspection des trvaux presque finis</h4>
         <ul>
           <li>Contrôle technique de bâtiments</li>
           <li>Vérification de conformité</li>
@@ -315,10 +314,73 @@
           <li>Photographie de nature</li>
         </ul>
       </div>
-
+      
+      <div id="contact" >
+      </div>
+      
+      <dialog id="video_footbar" class="modal">
+        <div class="modal-box w-11/12 max-w-5xl">
+            <video controls autoplay id="video-troll"> 
+              <source src="video/troll.mp4" type="video/mp4"> 
+            </video>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn" onclick="pause_troll()">Close</button>
+              </form>
+            </div>
+        </div>
+      </dialog>
+      
     </main>
+
+    <footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
+      <aside class="grid-flow-col items-center">
+        <img 
+          width="36"  
+          height="36"
+          viewBox="0 0 24 24"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          class="fill-current z-999" 
+          src="img/abeille.png"
+          onclick="abeille()"
+        />
+        <p>Copyright © <span id="year"></span> - All right reserved</p>
+      </aside>
+      <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+        <a href="https://github.com/Chazerty/charlesE" target="_blank" class="z-999">
+          <img
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+              src="img/github.png"
+          />
+        </a>
+        <img
+            width="24" 
+            height="24"
+            viewBox="0 0 24 24"
+            class="fill-current z-999"
+            src="img/video.png"
+            onclick="btn_ytb()"
+        />
+        <a href="https://www.instagram.com/epita.national/" target="_blank" class="z-999">
+          <img
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+              src="img/instagram.png"
+          />
+        </a>  
+      </nav>
+    </footer>
+
     <script src="src/scroll.js"></script>
     <script src="src/theme.js"></script>
-    <script src="affichage.js"></script>
+    <script src="src/affichage.js"></script>
+    <script src="src/son.js"></script>
   </body>
 </html>
