@@ -23,14 +23,14 @@
 
     <!-- Navbar -->
     <header class="sticky top-0 z-999 w-full">
-      <div class="navbar bg-base-100 shadow-sm">
+      <div class="navbar bg-base-200 shadow-sm">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
             </div>
             <ul tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              class="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
 
               <!-- Bouton Accueil -->
               <li><a onclick="affiche('accueil')">Accueil</a></li>
@@ -55,7 +55,7 @@
           </div>
           <!-- Dropdown themes -->
           <div class="dropdown dropdown-hover">
-            <div tabindex="0" role="button" class="btn m-1">
+            <div tabindex="0" role="button" class="btn m-1 bg-base-300">
               Thèmes
             </div>
             <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl ">
@@ -68,8 +68,8 @@
 
               <!-- Bouton Sunset -->
               <li class="flex gap-2 cursor-pointer items-center">
-                <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-sunset" value="sunset" onchange="changeTheme(this.value)"/>
-                Sunset
+                <input type="radio" name="theme-radios" class="radio radio-sm theme-controller" id="theme-caramellatte" value="caramellatte" onchange="changeTheme(this.value)"/>
+                Caramellatte
               </li>
                 <!-- Bouton Nord -->
               <li class="flex gap-2 cursor-pointer items-center">
@@ -110,9 +110,9 @@
         
         <div class="navbar-end gap-2">
            <!-- Bouton Calculatrice -->
-          <a class="btn" onclick="">Calculatrice</a>
+          <a class="btn bg-base-300" onclick="showCalculator()">Calculatrice</a>
           <!-- Bouton contactez-moi -->
-          <a class="btn" onclick="">Contactez-moi</a>
+          <a class="btn bg-base-300" onclick="showContact()">Contactez-moi</a>
          
         </div>
       </div> 
@@ -121,12 +121,12 @@
     <!-- Contenu principal -->
     <main class="min-h-155">
       <!-- accueil -->
-      <div id="accueil" class="view" >
+      <div id="accueil" class="view bg-base-200" >
 
         <div class="grid grid-cols-5">
 
           <!-- Partie gauche -->
-          <div class="col-span-2 bg-base-200 min-h-155 text-center z-998">
+          <div class="col-span-2 bg-base-300 min-h-155 text-center z-998">
             <img src="img/PP.jpg" class="rounded-full w-60 h-60 p-4 mx-auto mt-15" />
             <p class="text-2xl font-bold">Daniel DANIEL</p>
             <p class="text-2xl mb-4 font-bold">34 ans</p>
@@ -176,7 +176,6 @@
             </div>
           </div>
         </div>        
-
       </div>
     
       <div id="inspecteur" class="view">
@@ -355,8 +354,16 @@
         </ul>
       </div>
       
-      <div id="contact" >
-      </div>
+      <dialog id="contact" class="modal">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold text-center">Me Contacter</h3>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Annuler</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
       
       <dialog id="video_footbar" class="modal">
         <div class="modal-box w-11/12 max-w-5xl">
@@ -366,12 +373,20 @@
             <div class="modal-action">
               <form method="dialog">
                 <!-- if there is a button in form, it will close the modal -->
-                <button class="btn" onclick="pause_troll()">Close</button>
+                <button class="btn" onclick="pause_troll()">Fermer</button>
               </form>
             </div>
         </div>
       </dialog>
       
+      <dialog id="calculatrice" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <h3 class="text-lg font-bold text-center">Calculatrice</h3>
+        </div>
+      </dialog>
     </main>
 
     <footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">

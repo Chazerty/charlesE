@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme === 'retro'){
       document.getElementById('theme-retro').checked = true;
     }
-    else if (savedTheme === 'sunset'){
-      document.getElementById('theme-sunset').checked = true;
+    else if (savedTheme === 'caramellatte'){
+      document.getElementById('theme-caramellatte').checked = true;
     }
     else if (savedTheme === 'nord'){
       document.getElementById('theme-nord').checked = true;
