@@ -385,6 +385,34 @@
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
           <h3 class="text-lg font-bold text-center">Calculatrice</h3>
+          <div id="ecran" class="input input-bordered text-right text-2xl font-mono mb-4 p-4 w-full bg-base-200">
+            0
+          </div>
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="clearEcran()" class="btn btn-error">C</button>
+            <button onclick="ajoutEcran('/')" class="btn btn-warning">/</button>
+            <button onclick="ajoutEcran('*')" class="btn btn-warning">×</button>
+            <button onclick="retirer()" class="btn btn-warning">⌫</button>
+            
+            <button onclick="ajoutEcran('7')" class="btn btn-neutral">7</button>
+            <button onclick="ajoutEcran('8')" class="btn btn-neutral">8</button>
+            <button onclick="ajoutEcran('9')" class="btn btn-neutral">9</button>
+            <button onclick="ajoutEcran('-')" class="btn btn-warning">-</button>
+            
+            <button onclick="ajoutEcran('4')" class="btn btn-neutral">4</button>
+            <button onclick="ajoutEcran('5')" class="btn btn-neutral">5</button>
+            <button onclick="ajoutEcran('6')" class="btn btn-neutral">6</button>
+            <button onclick="ajoutEcran('+')" class="btn btn-warning">+</button>
+            
+            <button onclick="ajoutEcran('1')" class="btn btn-neutral">1</button>
+            <button onclick="ajoutEcran('2')" class="btn btn-neutral">2</button>
+            <button onclick="ajoutEcran('3')" class="btn btn-neutral">3</button>
+            <button onclick="calculer()" class="btn btn-success">=</button>
+            
+            <button onclick="ajoutEcran('0')" class="btn btn-neutral col-span-2">0</button>
+            <button onclick="ajoutEcran('.')" class="btn btn-neutral">.</button>
+            <button onclick="Ans()" class="btn btn-accentl">Ans</button>
+          </div>
         </div>
       </dialog>
     </main>
@@ -437,5 +465,6 @@
     <script src="src/theme.js"></script>
     <script src="src/affichage.js"></script>
     <script src="src/son.js"></script>
+    <script src="src/calculatrice.js"></script>
   </body>
 </html>
