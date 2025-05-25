@@ -16,3 +16,5 @@ window.onscroll = () => {
     text.style.opacity = 1; // Reste visible
   }
 };
+
+window.onload = onscroll()

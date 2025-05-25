@@ -140,8 +140,9 @@
             </div>
             <div class="flex justify-center items-center gap-2 p-1">
               <img src="img/adresse.png" height="32" width="32"/>
-              <a>123 Rue des Abeilles, 75016 Paris</a>
+              <a>123 rue des abeilles, 78100,</a>
             </div>
+            <p>Saint-Germain-en-Laye</p>
             <div class="flex justify-center items-center gap-2 p-1">
               <img src="img/linkedin.png" height="32" width="32"/>
               <a href="#">linkedin.com/in/danieldaniel</a>
@@ -149,11 +150,11 @@
           </div>
 
           <!-- Partie droite -->
-          <div class="col-span-3 mx-10 my-auto text-center">
+          <div class="col-span-3 pl-10 pr-10 bg-base-200 my-auto text-center">
             <div class="p-4">
               <h3 class="text-2xl font-bold">A propos de moi</h3>
               <p> Inspecteur en génie civil avec 9 ans d'expérience, spécilisé dans le contrôle qualité des projets de construction et 
-                apiculteur de 3ème génération gérant une exploitation familiale de 20 ruches.
+                apiculteur de 3ème génération gérant une exploitation familiale de 19 ruches.
               </p>
               <p>
                 Je suis passionné par la durabilité et cherchant à combiner ces deux domaines d'expertise pour développer des pratiques de construction écologiquement responsables.
@@ -171,7 +172,7 @@
               <ul class="list-disc list-inside">
                 <li>Programme d'inspection intégrant la biodiversité</li>
                 <li>Ruches sur toits d'immeubles (projet pilote)</li>
-                <li>Guide sur l'intégration d'espaces pollinisateurs en urbain</li>
+                <li>Guide sur l'intégration d'espaces pollinisateurs en milieu urbain</li>
               </ul>
             </div>
           </div>
@@ -265,15 +266,50 @@
       </div>
 
       <div id="apiculteur" class="view">
-        <h1 class="p-4 text-4xl text-center" p-4>Activité Apicole</h1>
+        <h1 class="p-4 text-5xl text-center y" p-4>Activité Apicole</h1>
 
-        <h2 class="text-2xl text-center">DaMiel | Producteur-Propriétaire</h2>
-        <div>
-          <p>Gestion de 20 ruches</p>
-          <img src="img/abeille.png" width="50" height="50" class="mx-auto mb-4"/>
-          Récolte et conditionnement de miel artisanal
-          Vente à domicile et magasin bio "Nature & Vie"
-          Ateliers de sensibilisation à la protection des abeilles
+        <div class="text-center space-y-10">
+          <h2 class="text-3xl text-center">DaMiel | Producteur-Propriétaire</h2>
+          <div>
+            <p class="divider text-3xl">Récolte et conditionnement de miel artisanal</p>
+            <img src="img/Pot_DaMiel.png" class="mt-4 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto"/>
+            <p class="text-2xl">Vente au 123 rues des abeilles, 78100, Saint-Germain-en-Laye</p> 
+            <p class="text-2xl">Et en magasin bio "Nature & Vie"</p>
+          </div>
+          <p class="divider pt-15 text-3xl">Gestion de 19 ruches</p>
+          <!-- Carousel d'images -->
+          <div>
+            <div class="carousel pt-4 pb-10 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto">
+              <div id="slide1" class="carousel-item relative w-full">
+                <img
+                  src="img/6_ruches.png"
+                  class="w-full" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                  <a href="#slide3" class="btn btn-circle">❮</a>
+                  <a href="#slide2" class="btn btn-circle">❯</a>
+                </div>
+              </div>
+              <div id="slide2" class="carousel-item relative w-full">
+                <img
+                  src="img/6_ruches2.png"
+                  class="w-full" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                  <a href="#slide1" class="btn btn-circle">❮</a>
+                  <a href="#slide3" class="btn btn-circle">❯</a>
+                </div>
+              </div>
+              <div id="slide3" class="carousel-item relative w-full">
+                <img
+                  src="img/7_ruches.png"
+                  class="w-full" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                  <a href="#slide2" class="btn btn-circle">❮</a>
+                  <a href="#slide1" class="btn btn-circle">❯</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
