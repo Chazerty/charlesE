@@ -33,24 +33,24 @@
               class="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
 
               <!-- Bouton Accueil -->
-              <li><a onclick="affiche('accueil')">Accueil</a></li>
+              <li><a onclick="affiche('accueil');document.activeElement.blur()">Accueil</a></li>
 
               <!-- dropdown experiences -->
               <li><a>Expériences Professionnelles</a>
                 <ul class="p-2">
-                  <li><a onclick="affiche('inspecteur')">Inspecteur des travaux Finis</a></li>
-                  <li><a onclick="affiche('apiculteur')">Apiculteur</a></li>
+                  <li><a onclick="affiche('inspecteur');document.activeElement.blur()">Inspecteur des travaux Finis</a></li>
+                  <li><a onclick="affiche('apiculteur');document.activeElement.blur()">Apiculteur</a></li>
                 </ul>
               </li>
 
               <!-- Bouton Formations -->
-              <li><a onclick="affiche('formation')">Formations</a></li>
+              <li><a onclick="affiche('formation');document.activeElement.blur()">Formations</a></li>
 
               <!-- Bouton Competences -->
-              <li><a onclick="affiche('competences')">Compétences</a></li>
+              <li><label for="my-drawer-4">Compétences</label></li>
 
               <!-- Bouton Centres interet -->
-              <li><a onclick="affiche('interet')">Centres d'intérêt</a></li>
+              <li><a onclick="affiche('interet');document.activeElement.blur()">Centres d'intérêt</a></li>
             </ul>
           </div>
           <!-- Dropdown themes -->
@@ -87,20 +87,20 @@
 
             <!-- dropdown experiences -->
             <li>
-              <details>
-                <summary>Expériences Professionnelles</summary>
-                <ul class="p-2">
-                  <li><a onclick="affiche('inspecteur')">Inspecteur Des Travaux Finis</a></li>
-                  <li><a onclick="affiche('apiculteur')">Apiculteur</a></li>
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn-navbar">Expériences Professionnelles</div>
+                <ul tabindex="0" class="dropdown-content menu bg-base-200 rounded-box p-2 shadow-sm">
+                  <li><a onclick="affiche('inspecteur');document.activeElement.blur()">Inspecteur Des Travaux Finis</a></li>
+                  <li><a onclick="affiche('apiculteur');document.activeElement.blur()">Apiculteur</a></li>
                 </ul>
-              </details>
+              </div>
             </li>
             
             <!-- Bouton Formations -->
             <li><a onclick="affiche('formation')">Formations</a></li>
 
             <!-- Bouton Competences -->
-            <li><a onclick="affiche('competences')">Compétences</a></li>
+            <li><label for="my-drawer-4">Compétences</label></li>
 
             <!-- Bouton Centres interet -->
             <li><a onclick="affiche('interet')">Centres d'intérêt</a></li>
@@ -119,9 +119,9 @@
     </header>
 
     <!-- Contenu principal -->
-    <main class="min-h-155">
+    <main class="min-h-155 bg-base-200">
       <!-- accueil -->
-      <div id="accueil" class="view bg-base-200" >
+      <div id="accueil" class="view" >
 
         <div class="grid grid-cols-5">
 
@@ -178,44 +178,103 @@
         </div>        
       </div>
     
-      <div id="inspecteur" class="view">
-        <h1>Inspecteur Des Travaux Finis</h1>
-        <p>2020</p>
-        <h4>BTP Qualité France | Inspecteur Senior des Travaux Totalement Finis</h4>
-        <ul>
-          <li>Supervision et contrôle qualité de projets de construction urbaine</li>
-          <li>Coordination avec les équipes d'ingénieurs et entrepreneurs</li>
-          <li>Rédaction de rapports d'inspection/conformité</li>
-          <li>Conseil sur les normes environnementales</li>
-        </ul>
-
-        <p>2016</p>
-        <h4>Bureau Veritas | Technicien d'Inspection des trvaux presque finis</h4>
-        <ul>
-          <li>Contrôle technique de bâtiments</li>
-          <li>Vérification de conformité</li>
-          <li>Formations de techniciens</li>
-        </ul>
-
-        <p>2014</p>
-        <h4>Bouygues Construction | Assistant Ingénieur (Stage)</h4>
-        <ul>
-          <li>Conception, planification</li>
-          <li>Assistance supervision chantier</li>
-          <li>Rapports de conformité</li>
+      <div id="inspecteur" class="view text-center">
+        <h1 class="text-4xl p-4">Inspecteur Des Travaux Finis</h1>
+        <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+          <li>
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="timeline-start mb-10 md:text-end max-md:text-start">
+              <time class="font-mono italic">2014</time>
+              <div class="text-lg font-black">Bouygues Construction | Assistant Ingénieur (Stage)</div>
+              <ul>
+                <li>Conception, planification</li>
+                <li>Assistance supervision chantier</li>
+                <li>Rapports de conformité</li>
+              </ul>
+            </div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="timeline-end md:text-start max-md:text-start">
+              <time class="font-mono italic">2016</time>
+              <div class="text-lg font-black">Bureau Veritas | Technicien d'Inspection des trvaux presque finis</div>
+              <ul>
+                <li>Contrôle technique de bâtiments</li>
+                <li>Vérification de conformité</li>
+                <li>Formations de techniciens</li>
+              </ul>
+            </div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="timeline-start mb-10 md:text-end max-md:text-start">
+              <time class="font-mono italic">2020</time>
+              <div class="text-lg font-black">BTP Qualité France | Inspecteur Senior des Travaux Totalement Finis</div>
+              <ul>
+                <li>Supervision et contrôle qualité de projets de construction urbaine</li>
+                <li>Coordination avec les équipes d'ingénieurs et entrepreneurs</li>
+                <li>Rédaction de rapports d'inspection/conformité</li>
+                <li>Conseil sur les normes environnementales</li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
 
       <div id="apiculteur" class="view">
-        <h1>Activité Apicole</h1>
+        <h1 class="p-4 text-4xl text-center" p-4>Activité Apicole</h1>
 
-        <h4>DaMiel | Producteur-Propriétaire</Da-></h4>
-        <ul>
-          <li>Gestion de 20 ruches</li>
-          <li>Récolte et conditionnement de miel artisanal</li>
-          <li>Vente à domicile et magasin bio "Nature & Vie"</li>
-          <li>Ateliers de sensibilisation à la protection des abeilles</li>
-        </ul>
+        <h2 class="text-2xl text-center">DaMiel | Producteur-Propriétaire</h2>
+        <div>
+          <p>Gestion de 20 ruches</p>
+          <img src="img/abeille.png" width="50" height="50" class="mx-auto mb-4"/>
+          Récolte et conditionnement de miel artisanal
+          Vente à domicile et magasin bio "Nature & Vie"
+          Ateliers de sensibilisation à la protection des abeilles
+        </div>
       </div>
 
       <div id="formation" class="view">
@@ -322,26 +381,35 @@
           </li>
         </ul>
       </div>
+      
+      <!-- Compétences -->
+      <div class="drawer drawer-end z-999">
+        <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-side">
+          <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+          <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+            <!-- Sidebar content here -->
+            <h4 class="text-xl text-center mb-4">Compétences Techniques</h4>
+            <ul class="pl-5 space-y-2 mb-10"> 
+                <li>Inspection & contrôle qualité</li>
+                <li>Gestion de projet</li>
+                <li>Analyse de plans techniques</li>
+                <li>Normes du bâtiment</li>
+                <li>Techniques apicoles</li>
+                <li>Évaluation d'impact environnemental</li>
+            </ul>
 
-      <div id="competences" class="view">
-        <h3>Compétences</h3>
-        <h4>Techniques</h4>
-        <ul>
-            <li>Inspection & contrôle qualité</li>
-            <li>Gestion de projet</li>
-            <li>Analyse de plans techniques</li>
-            <li>Normes du bâtiment</li>
-            <li>Techniques apicoles</li>
-            <li>Évaluation d'impact environnemental</li>
-        </ul>
-
-        <h4>Logiciels & Langues</h4>
-        <ul>
-            <li>AutoCAD, Revit, MS Project</li>
-            <li>Trimble SketchUp, Tekla Structures</li>
-            <li>Suite Microsoft Office</li>
-            <li>Français (natif), Anglais (courant)</li>
-        </ul>
+            <h4 class="text-xl text-center mb-4">Logiciels</h4>
+            <ul class="space-y-2">
+                <li class="flex items-center"><img src="img/AutoCad.png" width="50" height="50"/>AutoCAD</li>
+                <li class="flex items-center"><img src="img/revit.png" width="50" height="50"/>Revit</li>
+                <li class="flex items-center"><img src="img/Project.png" width="50" height="50"/>Project</li>
+                <li class="flex items-center"><img src="img/sketchup.png" width="50" height="50"/>Trimble SketchUp</li>
+                <li class="flex items-center"><img src="img/Tekla_Structures.png" width="50" height="50"/>Tekla Structures</li>
+                <li class="flex items-center"><img src="img/M365.png" width="50" height="50"/>Suite Microsoft Office</li>
+            </ul>
+          </ul>
+        </div>
       </div>
 
       <div id="interet" class="view">
@@ -355,12 +423,17 @@
       </div>
       
       <dialog id="contact" class="modal">
-        <div class="modal-box">
+        <div class="modal-box w-3xl max-w-5xl">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
           <h3 class="text-lg font-bold text-center">Me Contacter</h3>
-          <div class="modal-action">
-            <form method="dialog">
-              <button class="btn">Annuler</button>
-            </form>
+          <div class="quiz text-center mb-4 ">
+            <a> Afin de pouvoir me contacter vous allez devoir répondre à un petit quiz</a>
+          </div>
+          <div class="text-center">
+            <button class="btn end-full">Valider</button>
+            <button class="btn">Brute-Force</button>
           </div>
         </div>
       </dialog>
@@ -425,14 +498,14 @@
           viewBox="0 0 24 24"
           fill-rule="evenodd"
           clip-rule="evenodd"
-          class="fill-current z-999" 
+          class="fill-current z-998" 
           src="img/abeille.png"
           onclick="abeille()"
         />
         <p>Copyright © <span id="year"></span> - All right reserved</p>
       </aside>
       <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <a href="https://github.com/Chazerty/charlesE" target="_blank" class="z-999">
+        <a href="https://github.com/Chazerty/charlesE" target="_blank" class="z-998">
           <img
               width="24"
               height="24"
@@ -445,11 +518,11 @@
             width="24" 
             height="24"
             viewBox="0 0 24 24"
-            class="fill-current z-999"
+            class="fill-current z-998"
             src="img/video.png"
             onclick="btn_ytb()"
         />
-        <a href="https://www.instagram.com/epita.national/" target="_blank" class="z-999">
+        <a href="https://www.instagram.com/epita.national/" target="_blank" class="z-998">
           <img
               width="24"
               height="24"
