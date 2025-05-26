@@ -112,7 +112,7 @@
            <!-- Bouton Calculatrice -->
           <a class="btn bg-base-300" onclick="showCalculator()">Calculatrice</a>
           <!-- Bouton contactez-moi -->
-          <a class="btn bg-base-300" onclick="showContact()">Contactez-moi</a>
+          <a class="btn bg-base-300" onclick="showQuiz()">Contactez-moi</a>
          
         </div>
       </div> 
@@ -457,22 +457,162 @@
           <li>Photographie de nature</li>
         </ul>
       </div>
-      
-      <dialog id="contact" class="modal">
-        <div class="modal-box w-3xl max-w-5xl">
-          <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          </form>
-          <h3 class="text-lg font-bold text-center">Me Contacter</h3>
-          <div class="quiz text-center mb-4 ">
-            <a> Afin de pouvoir me contacter vous allez devoir répondre à un petit quiz</a>
+
+      <div>
+        <!-- Quiz -->
+        <dialog id="modal-quiz" class="modal">
+          <div class="modal-box w-3xl max-w-5xl">
+            <form method="dialog">
+              <button id="btn-x-quiz" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h3 class="text-lg font-bold text-center">Me Contacter</h3>
+            <div  id="loading">
+              <div class="flex justify-center items-center p-15">
+                <span class="loading loading-bars loading-xl view-quiz"></span>
+              </div>
+            </div>
+            <div class="quiz text-center mb-4 view-quiz" id="quiz">
+              <a> Afin de pouvoir me contacter vous allez devoir répondre à un petit quiz !</a>
+
+              <!-- Quiz -->
+              <div class="grid grid-cols-2 gap-10 mt-4 space-y-5">
+                <!-- Question 1 -->
+                <div>
+                  <p class="font-semibold mb-2">1. Combien ai-je de ruche ?</p>
+                  <div class="flex flex-col gap-2">
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q1" value="a" class="radio radio-quiz " required />
+                      <span>9</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q1" value="b" class="radio radio-quiz " />
+                      <span>19</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q1" value="c" class="radio radio-quiz " />
+                      <span>29</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div>
+                  <p class="font-semibold mb-2">2. Quelle logiciel est dans mes compétences ?</p>
+                  <div class="flex flex-col gap-2">
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q2" value="a" class="radio radio-quiz " required />
+                      <span>Photoshop</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q2" value="b" class="radio radio-quiz " />
+                      <span>Docker</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q2" value="c" class="radio radio-quiz " />
+                      <span>Revit</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div>
+                  <p class="font-semibold mb-2">3. En quelle année ai-je fait mon stage chez Bouygues Construction ?</p>
+                  <div class="flex flex-col gap-2">
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q3" value="a" class="radio radio-quiz " required />
+                      <span>2014</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q3" value="b" class="radio radio-quiz " />
+                      <span>2015</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q3" value="c" class="radio radio-quiz " />
+                      <span>2016</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div>
+                  <p class="font-semibold mb-2">4. Dans quel lycée étais-je ?</p>
+                  <div class="flex flex-col gap-2">
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q4" value="a" class="radio radio-quiz " required />
+                      <span>Stanislas</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q4" value="b" class="radio radio-quiz " />
+                      <span>Saint-Louis-de-Gonzague</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q4" value="c" class="radio radio-quiz " />
+                      <span>Henri IV</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div>
+                  <p class="font-semibold mb-2">5. Quel est mon chanteur préféré ?</p>
+                  <div class="flex flex-col gap-2">
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q5" value="a" class="radio radio-quiz " required />
+                      <span>...</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q5" value="b" class="radio radio-quiz " />
+                      <span>Rick Astley</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q5" value="c" class="radio radio-quiz " />
+                      <span>...</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div>
+                  <p class="font-semibold mb-2">6. Quel est l'un de mes centre d'intéret ?</p>
+                  <div class="flex flex-col gap-2">
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q6" value="a" class="radio radio-quiz " required />
+                      <span>La programmation</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q6" value="b" class="radio radio-quiz " />
+                      <span>La photographie</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-2">
+                      <input type="radio" name="q6" value="c" class="radio radio-quiz " />
+                      <span>Le skateboard</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Bouton -->
+            <div class="text-center">
+              <button class="btn end-full" id="test-quiz">Valider</button>
+              <button class="btn" onclick="bruteforce()">Brute-Force</button>
+            </div>
           </div>
-          <div class="text-center">
-            <button class="btn end-full">Valider</button>
-            <button class="btn">Brute-Force</button>
+        </dialog>
+
+        <!-- Contact -->
+        <dialog id="contact" class="modal">
+          <div class="modal-box w-11/12 max-w-5xl">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4">Click the button below to close</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
           </div>
-        </div>
-      </dialog>
+        </dialog>
+      </div>
       
       <dialog id="video_footbar" class="modal">
         <div class="modal-box w-11/12 max-w-5xl">
@@ -575,5 +715,6 @@
     <script src="src/affichage.js"></script>
     <script src="src/son.js"></script>
     <script src="src/calculatrice.js"></script>
+    <script src="src/quiz.js"></script>
   </body>
 </html>

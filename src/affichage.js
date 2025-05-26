@@ -14,6 +14,6 @@ function showCalculator() {
     document.getElementById('calculatrice').showModal();
 };
 
-function showContact() {
-    document.getElementById('contact').showModal();
+function showQuiz() {
+    document.getElementById('modal-quiz').showModal();
 }
