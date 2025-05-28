@@ -5,6 +5,15 @@
     <link href="./src/output.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mon Curriculum Vitæe</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "qASGpeFnIa9-CmJ3j",
+            });
+        })();
+    </script>
   </head>
 
   <body>
@@ -471,11 +480,12 @@
                 <span class="loading loading-bars loading-xl view-quiz"></span>
               </div>
             </div>
+            <!-- Quiz -->
             <div class="quiz text-center mb-4 view-quiz" id="quiz">
               <a> Afin de pouvoir me contacter vous allez devoir répondre à un petit quiz !</a>
 
-              <!-- Quiz -->
               <div class="grid grid-cols-2 gap-10 mt-4 space-y-5">
+                
                 <!-- Question 1 -->
                 <div>
                   <p class="font-semibold mb-2">1. Combien ai-je de ruches ?</p>
@@ -558,7 +568,7 @@
                   <div class="flex flex-col gap-2">
                     <label class="cursor-pointer flex items-center gap-2">
                       <input type="radio" name="q5" value="1" class="radio radio-quiz " required />
-                      <span>...</span>
+                      <span>Kaaris</span>
                     </label>
                     <label class="cursor-pointer flex items-center gap-2">
                       <input type="radio" name="q5" value="2" class="radio radio-quiz " />
@@ -566,7 +576,7 @@
                     </label>
                     <label class="cursor-pointer flex items-center gap-2">
                       <input type="radio" name="q5" value="3" class="radio radio-quiz " />
-                      <span>...</span>
+                      <span>Sade</span>
                     </label>
                   </div>
                 </div>
@@ -590,26 +600,125 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Bouton -->
-            <div class="text-center">
-              <button class="btn end-full" onclick="submit()">Valider</button>
-              <button class="btn" onclick="bruteforce()">Brute-Force</button>
+
+              <!-- Bouton -->
+              <div class="text-center">
+                <button class="btn end-full" onclick="submit()">Valider</button>
+                <button class="btn" onclick="bruteforce()">Brute-Force</button>
+              </div>
+
             </div>
           </div>
         </dialog>
 
         <!-- Contact -->
         <dialog id="contact" class="modal">
-          <div class="modal-box w-11/12 max-w-5xl">
-            <h3 class="text-lg font-bold">Hello!</h3>
-            <p class="py-4">Click the button below to close</p>
-            <div class="modal-action">
-              <form method="dialog">
-                <!-- if there is a button, it will close the modal -->
-                <button class="btn">Close</button>
-              </form>
-            </div>
+          <div class="modal-box w-3xl max-w-5xl p-6 bg-base-200 rounded-lg shadow space-y-4">
+            <form method="dialog">
+                <button id="btn-x-quiz" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <!-- Formulaire de contact -->
+            <form id="contact-form" class="space-y-2.5">
+              <h3 class="text-lg font-bold text-center">Contactez-moi</h3>
+                <!-- Email -->
+                <div>
+                  <label class="label">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g
+                          stroke-linejoin="round"
+                          stroke-linecap="round"
+                          stroke-width="2.5"
+                          fill="none"
+                          stroke="currentColor"
+                        >
+                          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </g>
+                      </svg>
+                    <span class="label-text">Adresse Email</span>
+                  </label>
+                  <input 
+                    type="email"
+                    name="email"
+                    placeholder="mail@site.com" 
+                    class="input input-bordered input-primary w-full" 
+                    required 
+                  />
+                </div>
+                <!-- Nom -->
+                <div>
+                  <label class="label">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </g>
+                    </svg>
+                    <span class="label-text">Nom</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Votre nom"
+                    name="nom"
+                    class="input input-bordered input-primary w-full"
+                    required
+                    pattern="[A-Za-z][A-Za-z0-9\-]*"
+                    minlength="3"
+                    maxlength="30"
+                    title="Only letters or dash"
+                  />
+                </div>
+                <!-- Prenom -->
+                <div>
+                  <label class="label">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </g>
+                    </svg>
+                    <span class="label-text">Prénom</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Votre prénom"
+                    class="input input-bordered input-primary w-full"
+                    required
+                    pattern="[A-Za-z][A-Za-z0-9\-]*"
+                    minlength="3"
+                    maxlength="30"
+                    title="Only letters or dash"
+                    name="prenom"
+                  />
+                </div>
+                <!-- Message -->
+                <div>
+                  <label class="label">
+                    <span class="label-text">Message</span>
+                  </label>
+                  <textarea
+                    class="textarea textarea-bordered textarea-primary w-full"
+                    placeholder="Votre message"
+                    rows="5"
+                    required
+                    minlength="1"
+                    name="message"
+                  ></textarea>
+                </div>
+              <button class="btn" type="submit">Envoyer</button>
+            </form>
           </div>
         </dialog>
       </div>
@@ -715,6 +824,6 @@
     <script src="src/affichage.js"></script>
     <script src="src/son.js"></script>
     <script src="src/calculatrice.js"></script>
-    <script src="src/quiz.js"></script>
+    <script src="src/quiz.js"></script>    
   </body>
 </html>

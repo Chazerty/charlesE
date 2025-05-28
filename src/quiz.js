@@ -11,7 +11,7 @@ function sleep(ms=2000) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-async function submit(ms = 1) {
+async function submit() {
 
     const bonnesReponses = ["2", "3", "1", "3", "1", "2"];
     let score = 0;
@@ -21,15 +21,13 @@ async function submit(ms = 1) {
             score++;
         }
     };
-    if(ms !== 0) {
+
+    if(score === bonnesReponses.length) {
         document.getElementById('quiz').style.display = 'none';
         document.getElementById('loading').style.display = 'block';
         await sleep();
         document.getElementById('loading').style.display = 'none';
         document.getElementById('quiz').style.display = 'block';
-    }
-
-    if(score === bonnesReponses.length) {
         document.getElementById('btn-x-quiz').click();
         document.getElementById('contact').showModal()
         return 1;       
@@ -49,7 +47,6 @@ async function submit(ms = 1) {
 };
 
 async function bruteforce() {
-
     for(let i=1; i<=3; i++) {
         const selector = `input[name="q${1}"][value="${i}"]`;
         const radio = document.querySelector(selector);
@@ -88,7 +85,7 @@ async function bruteforce() {
                             radio.checked = true;
                             }
                             await sleep(1);
-                            rep = await submit(0);
+                            rep = await submit();
                             if(rep === 1) {
                                 return;                         
                             }
@@ -99,3 +96,14 @@ async function bruteforce() {
         }
     }
 };
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_damiel', 'template_amu9nnx', this)
+        .then(() => {
+            this.reset();
+            alert('SUCCESS!');
+        }, (error) => {
+            alert('FAILED...', error);
+        });
+});
