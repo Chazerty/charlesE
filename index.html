@@ -188,6 +188,7 @@
         </div>        
       </div>
     
+      <!-- Inspecteur des Travaux Finis -->
       <div id="inspecteur" class="view text-center">
         <h1 class="text-4xl p-4">Inspecteur Des Travaux Finis</h1>
         <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
@@ -274,6 +275,7 @@
         </ul>
       </div>
 
+      <!-- Activité Apicole -->
       <div id="apiculteur" class="view">
         <h1 class="p-4 text-5xl text-center y" p-4>Activité Apicole</h1>
 
@@ -322,6 +324,7 @@
         </div>
       </div>
 
+      <!-- Formations -->
       <div id="formation" class="view">
         <h1  class="flex justify-center p-4 text-7xl">Formations</h1>
         <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
@@ -457,14 +460,114 @@
         </div>
       </div>
 
+      <!-- Centres d'intérêt -->
       <div id="interet" class="view">
-        <h3>Centres d'intérêt</h3>
-        <ul>
-          <li>Écologie et biodiversité</li>
-          <li>Agriculture urbaine</li>
-          <li>Randonnée</li>
-          <li>Photographie de nature</li>
-        </ul>
+        <div class="text-center space-y-10">
+          <h1 class="flex justify-center p-4 text-6xl">Centres d'intérêt</h1>
+          <h2 class="text-3xl text-center divider">Randonnée</h2>
+          <img src="img/randonnee.png" class="mt-4 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto"/>
+          <h2 class="text-3xl text-center divider">Photographie de nature</h2>
+
+          <!-- Carousel d'images -->
+          <div>
+            <div class="carousel pt-4 pb-10 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto">
+              <div id="slide4" class="carousel-item relative w-full">
+                <img
+                  src="img/photo_nature_1.png"
+                  class="w-full" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                  <a href="#slide6" class="btn btn-circle">❮</a>
+                  <a href="#slide5" class="btn btn-circle">❯</a>
+                </div>
+              </div>
+              <div id="slide5" class="carousel-item relative w-full">
+                <img
+                  src="img/photo_nature_2.png"
+                  class="w-full" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                  <a href="#slide4" class="btn btn-circle">❮</a>
+                  <a href="#slide6" class="btn btn-circle">❯</a>
+                </div>
+              </div>
+              <div id="slide6" class="carousel-item relative w-full">
+                <img
+                  src="img/photo_nature_3.png"
+                  class="w-full" />
+                <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                  <a href="#slide5" class="btn btn-circle">❮</a>
+                  <a href="#slide4" class="btn btn-circle">❯</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="text-3xl text-center divider">Musique</h2>
+          <div class="w-150 justify-center mx-auto pt-10 pb-10">
+            <ul class="list bg-base-100 rounded-box shadow-md">
+    
+              <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Mes artistes préférés</li>
+              
+              <li class="list-row">
+                <div class="text-4xl font-thin opacity-30 tabular-nums">01</div>
+                <div><img class="size-10 rounded-box" src="img/kaaris.jpg"/></div>
+                <div class="list-col-grow">
+                  <div>Kaaris</div>
+                  <div class="text-xs uppercase font-semibold opacity-60">Zoo</div>
+                </div>
+                <button class="btn btn-square btn-ghost" onclick="play_kaaris()">
+                  <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
+                </button>
+                <button class="btn btn-square btn-ghost" onclick="reset_kaaris()">
+                  <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="1 4 1 10 7 10"></polyline>
+                      <path d="M3.51 15a9 9 0 1 0 .49-5.27L1 10"></path>
+                    </g>
+                  </svg>
+                </button>
+              </li>
+              
+              <li class="list-row">
+                <div class="text-4xl font-thin opacity-30 tabular-nums">02</div>
+                <div><img class="size-10 rounded-box" src="img/kaarism.jpg"/></div>
+                <div class="list-col-grow">
+                  <div>Kaarism</div>
+                  <div class="text-xs uppercase font-semibold opacity-60">Goulag</div>
+                </div>
+                <button class="btn btn-square btn-ghost" onclick="play_kaarism()">
+                  <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
+                </button>
+                <button class="btn btn-square btn-ghost" onclick="reset_kaarism()">
+                  <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="1 4 1 10 7 10"></polyline>
+                      <path d="M3.51 15a9 9 0 1 0 .49-5.27L1 10"></path>
+                    </g>
+                  </svg>
+                </button>
+              </li>
+              
+              <li class="list-row">
+                <div class="text-4xl font-thin opacity-30 tabular-nums">03</div>
+                <div><img class="size-10 rounded-box" src="img/jaxomy.jpg"/></div>
+                <div class="list-col-grow">
+                  <div>Jaxomy</div>
+                  <div class="text-xs uppercase font-semibold opacity-60">Pedro</div>
+                </div>
+                <button class="btn btn-square btn-ghost" onclick="play_jaxomy()">
+                  <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
+                </button>
+                <button class="btn btn-square btn-ghost" onclick="reset_jaxomy()">
+                  <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="1 4 1 10 7 10"></polyline>
+                      <path d="M3.51 15a9 9 0 1 0 .49-5.27L1 10"></path>
+                    </g>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div>
