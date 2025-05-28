@@ -37,7 +37,13 @@ function btn_ytb()  {
 }
 
 function play_kaarism() {
-    if (kaarism) {    
+    if (kaarism) {
+        if (kaaris.played) {
+            kaaris.pause();
+        }
+        if (jaxomy.played) {
+            jaxomy.pause();
+        };   
         if (kaarism.paused) {
             kaarism.play();
         }
@@ -48,6 +54,12 @@ function play_kaarism() {
 
 function play_kaaris() {
     if (kaaris) {
+        if (kaarism.played) {
+            kaarism.pause();
+        };
+        if (jaxomy.played) {
+            jaxomy.pause();
+        };
         if (kaaris.paused) {
             kaaris.play();
         }
@@ -58,6 +70,12 @@ function play_kaaris() {
 
 function play_jaxomy() {
     if (jaxomy) {
+        if (kaaris.played) {
+            kaaris.pause();
+        };
+        if (kaarism.played) {
+            kaarism.pause();
+        };
         if (jaxomy.paused) {
             jaxomy.play();
         }
